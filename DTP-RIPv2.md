@@ -1,6 +1,6 @@
 # DTP + RIPv2
 ## Topologia de Red
-![Texto alternativo de la imagen](/assets/images/DTP_RIP/DTP_RIP.png)
+![Texto alternativo de la imagen](/DTP_RIP.png)
 
 ## Configuración de RTA
 ```
