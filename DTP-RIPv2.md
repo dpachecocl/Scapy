@@ -97,5 +97,12 @@ sendp(ASD[0])
 ```
 ## RIPv2
 ```
-
+from scapy.all import *
+ASD = Ether(dst="01:00:5e:00:00:09", src="aa:bb:cc:00:11:22", type=0x8100)
+ASD /= Dot1Q(prio=0, id=0, vlan=20, type=0x0800)
+ASD /= IP(tos=192,ttl=2,proto=17,src="192.168.1.10",dst="224.0.0.9")
+ASD /= UDP(sport=520, dport=520)
+ASD /= RIP(cmd=2,version=2)
+ASD /= RIPEntry(AF=2, RouteTag=1354, addr="8.8.8.8", mask="255.255.255.255", nextHop="0.0.0.0", metric=1)
+sendp(ASD)
 ```
