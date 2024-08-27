@@ -85,7 +85,7 @@ int Gi1/2
  switchport mode access
  switchport access vlan 20
 ```
-## DTP
+## DTP (Uso de scapy en modo biblioteca)
 ```
 from scapy.all import *
 load_contrib("dtp")
